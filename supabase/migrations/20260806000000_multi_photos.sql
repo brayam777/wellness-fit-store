@@ -1,6 +1,5 @@
 -- Lets each product carry multiple photos, shown as a swipeable carousel on
--- the site instead of a single photo per product. Same pattern as
--- romano-joias' "media" column, kept simpler here (photos only, no video).
+-- the site instead of a single photo per product (photos only, no video).
 
 alter table public.wellness_products
   add column if not exists media jsonb not null default '[]'::jsonb;

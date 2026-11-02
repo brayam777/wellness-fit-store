@@ -5,9 +5,8 @@
 // release; bump deliberately and test if you ever need a newer version.
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.111.0';
 
-// Standalone Supabase project for Wellness Fit Store, under a separate
-// Supabase account (barayamgamer@gmail.com) — kept apart from the
-// mecanicsafe app and luanne-pratas, which live on the main account.
+// Standalone Supabase project for Wellness Fit Store, under the
+// barayamgamer@gmail.com Supabase account.
 const SUPABASE_URL = 'https://vxeokiiwdsbwodlriadm.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_SW-vmqabZBpebIXjgQSjQQ__xCNmggO';
 

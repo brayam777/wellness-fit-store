@@ -1,7 +1,5 @@
 -- Schema for the standalone Wellness Fit Store Supabase project
--- (independent from the mechanic shop app and from luanne-pratas — this one
--- lives under a separate Supabase account, barayamgamer@gmail.com, since the
--- main account already had 2 free projects).
+-- (Supabase account barayamgamer@gmail.com).
 -- Safe to run multiple times.
 
 create table if not exists public.wellness_products (

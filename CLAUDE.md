@@ -46,7 +46,7 @@ Tabelas: `wellness_products` (name, category, price, original_price, featured, m
 2. Aplique de um destes jeitos:
    - **SQL Editor** do painel Supabase (conta barayamgamer): cole e rode. Foi assim que as 4 migrações atuais foram aplicadas.
    - **CLI**: `npx supabase login` com a conta **barayamgamer@gmail.com**, `npx supabase link --project-ref vxeokiiwdsbwodlriadm` e `npx supabase db push`. ⚠️ Antes do primeiro `db push`, rode `npx supabase migration list`: o histórico remoto provavelmente está vazio (tudo foi aplicado à mão), e o `db push` tentaria rodar tudo de novo — a `20260806000000_multi_photos.sql` **falha** se rodar outra vez (a coluna `image_url` já não existe). Marque as 4 como aplicadas: `npx supabase migration repair --status applied 20260803120000 20260803130000 20260806000000 20260807000000`.
-   - O `supabase login` é global: trocar pra barayamgamer tira o acesso das outras contas (MecanicSafe/Luanne usam brayamfelipe02).
+   - O `supabase login` é global: trocar pra barayamgamer tira o acesso aos projetos da outra conta do Brayam (e vice-versa).
 
 ## Rodar local
 
@@ -67,5 +67,5 @@ Push na `main` do GitHub → a Vercel publica em produção sozinha. O `.verceli
 
 - As 3 fotos do hero (`index.html`) ainda apontam pro Supabase Storage (`wellness-photos`) — mover pra S3 e apagar o bucket antigo pra zerar o uso de banda do Supabase.
 - Uploads novos na S3 não definem `Cache-Control` (`api/presign-upload.js`); um cache longo (as chaves são UUID, nunca sobrescritas) economizaria banda.
-- Fotos são servidas no tamanho cheio (até 1440px) até nos cards; uma miniatura (como o Luanne Pratas fez, `-thumb.jpg`) deixaria o celular mais rápido.
+- Fotos são servidas no tamanho cheio (até 1440px) até nos cards; uma miniatura (`<uuid>-thumb.jpg` de ~600px gerada no upload) deixaria o celular mais rápido.
 - Sem banco de teste: tudo roda contra produção.
