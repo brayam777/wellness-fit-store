@@ -61,7 +61,7 @@ Tabelas: `wellness_products` (name, category, price, original_price, featured, m
 
 ## Deploy
 
-Push na `main` do GitHub → a Vercel publica em produção sozinha. O `.vercelignore` impede que `tests/`, `supabase/`, `CLAUDE.md`, `README.md`, `serve.cjs` e `.claude/` vão pro site.
+Push na `main` do GitHub → a Vercel publica em produção sozinha (repositório conectado com `vercel git connect` em 2026-11-02; antes disso o deploy era manual com `vercel deploy --prod`, que ainda funciona em emergência). Confira com `npx vercel ls wellness-fit-store`. O `.vercelignore` impede que `tests/`, `supabase/`, `CLAUDE.md`, `README.md`, `serve.cjs` e `.claude/` vão pro site.
 
 ## Pendências
 
