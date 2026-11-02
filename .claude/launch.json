@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wellness-fit-store",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["serve.cjs"],
+      "port": 8082
+    }
+  ]
+}

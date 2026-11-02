@@ -1,0 +1,9 @@
+# Nada disso é parte do site público (ver tests/smoke.mjs, que confere os 404)
+tests/
+supabase/
+.claude/
+CLAUDE.md
+README.md
+serve.cjs
+.env*
+*.local

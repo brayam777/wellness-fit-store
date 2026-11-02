@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wellness Fit Store — Painel</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="img/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="img/icon.svg" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Wellness Painel" />
+<meta name="theme-color" content="#3f5c40" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 200 200" aria-hidden="true">
+        <rect width="200" height="200" rx="36" fill="#3f5c40" />
+        <g fill="#cfe0c4">
+          <rect x="30" y="80" width="18" height="40" rx="6" />
+          <rect x="16" y="88" width="14" height="24" rx="5" />
+          <rect x="152" y="80" width="18" height="40" rx="6" />
+          <rect x="170" y="88" width="14" height="24" rx="5" />
+          <rect x="40" y="96" width="120" height="8" rx="4" />
+        </g>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">WELLNESS FIT</span>
+        <span class="brand-sub">área do lojista</span>
+      </span>
+    </a>
+    <a href="index.html" class="btn btn-outline btn-sm">Ver site</a>
+  </div>
+</header>
+
+<main class="container admin-main">
+
+  <section id="loginView" class="admin-card" hidden>
+    <h1 class="section-title admin-title">Entrar</h1>
+    <p class="admin-sub">Digite a senha do painel.</p>
+    <form id="loginForm" class="admin-form">
+      <input type="password" id="loginPassword" placeholder="Senha" required />
+      <button type="submit" class="btn btn-whatsapp">Entrar</button>
+    </form>
+    <p id="loginMessage" class="admin-message"></p>
+  </section>
+
+  <section id="panelView" class="admin-panel" hidden>
+    <div class="admin-panel-header">
+      <div>
+        <h1 class="section-title admin-title">Gerenciar catálogo</h1>
+        <p id="sessionInfo" class="admin-sub"></p>
+      </div>
+      <button id="logoutBtn" class="btn btn-outline btn-sm">Sair</button>
+    </div>
+
+    <p id="panelMessage" class="admin-message"></p>
+
+    <div class="admin-card">
+      <h2 class="admin-card-title" id="productFormTitle">Adicionar peça</h2>
+      <form id="productForm" class="admin-form product-form">
+        <input type="hidden" id="editingProductId" value="" />
+        <input type="text" id="productName" placeholder="Nome da peça" required />
+        <input type="text" id="productCategory" placeholder="Categoria (ex: Leggings)" required list="categoryOptions" />
+        <datalist id="categoryOptions"></datalist>
+        <input type="number" id="productPrice" placeholder="Preço (R$)" step="0.01" min="0" required />
+        <input type="number" id="productOriginalPrice" placeholder="Preço original (opcional)" step="0.01" min="0" />
+        <p class="admin-hint">Preencha o preço original só se essa peça estiver em promoção (mostra "de / por" no site).</p>
+        <label class="admin-checkbox">
+          <input type="checkbox" id="productFeatured" />
+          Destacar essa peça no topo do site
+        </label>
+        <div id="mediaPreview" class="admin-media-preview" hidden></div>
+        <input type="file" id="productMedia" accept="image/*" multiple hidden />
+        <button type="button" id="addMediaBtn" class="admin-add-media">+ Adicionar foto</button>
+        <p class="admin-hint">Adicione quantas fotos quiser. Toque em "Adicionar foto" de novo pra incluir mais — a ordem escolhida vira a ordem do carrossel no site.</p>
+        <div class="product-form-actions">
+          <button type="submit" class="btn btn-whatsapp" id="productFormSubmit">Adicionar</button>
+          <button type="button" class="btn btn-outline btn-sm" id="cancelEditBtn" hidden>Cancelar edição</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="admin-card">
+      <h2 class="admin-card-title">Peças cadastradas</h2>
+      <p class="admin-sub">Toque numa peça pra editar.</p>
+      <button id="seedBtn" class="btn btn-outline btn-sm" hidden>Importar catálogo de exemplo</button>
+      <div id="productList" class="admin-list"></div>
+    </div>
+  </section>
+
+</main>
+
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>
